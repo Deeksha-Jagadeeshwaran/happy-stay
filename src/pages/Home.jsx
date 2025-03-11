@@ -18,7 +18,7 @@ const featuredStays = [
 const Home = () => {
   return (
     <div>
-      {/* Hero Section */}
+      {/* Hero Section with Scenic Background */}
       <section
         className="relative flex flex-col items-center justify-center text-center text-white py-24 px-6"
         style={{
@@ -27,9 +27,33 @@ const Home = () => {
           backgroundPosition: "center"
         }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
+        {/* Overlay with gradient instead of solid black */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black/70"></div>
+        
+        {/* Decorative Elements */}
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute top-10 left-10 w-24 h-24 border-2 border-white rounded-full"></div>
+          <div className="absolute top-20 right-20 w-16 h-16 border-2 border-white"></div>
+          <div className="absolute bottom-20 left-1/4 w-20 h-20 border-2 border-white transform rotate-45"></div>
+          <div className="absolute bottom-40 right-1/4 w-32 h-12 border-2 border-white rounded-lg"></div>
+          
+          {/* Mountain silhouette */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 overflow-hidden">
+            <div className="absolute bottom-0 left-0 w-full h-40 bg-black/30">
+              <svg viewBox="0 0 1440 320" className="absolute bottom-0">
+                <path fill="rgba(255,255,255,0.1)" fillOpacity="0.2" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,213.3C672,224,768,224,864,197.3C960,171,1056,117,1152,117.3C1248,117,1344,171,1392,197.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+              </svg>
+              <svg viewBox="0 0 1440 320" className="absolute bottom-0">
+                <path fill="rgba(255,255,255,0.1)" fillOpacity="0.1" d="M0,288L48,277.3C96,267,192,245,288,240C384,235,480,245,576,250.7C672,256,768,256,864,234.7C960,213,1056,171,1152,176C1248,181,1344,235,1392,261.3L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+              </svg>
+            </div>
+          </div>
+        </div>
+        
         <div className="relative z-10 max-w-3xl">
-          <h1 className="text-5xl font-bold leading-tight">Discover Ooty - Queen of Hill Stations</h1>
+          <h1 className="text-6xl font-bold mb-2">Happy Stay</h1>
+          <div className="h-1 w-32 bg-white mx-auto mb-6 rounded-full"></div>
+          <h2 className="text-4xl font-bold leading-tight">Discover Ooty - Queen of Hill Stations</h2>
           <p className="text-lg mt-3">Experience the magic of the Nilgiris with our handpicked accommodations and guided tours.</p>
           <div className="mt-6">
             <Link to="/tours">
